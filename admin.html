@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Админ панель</title>
+    <link rel="stylesheet" type="text/css" href="admin.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/tabs.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="sidebar">
+        <ul class="tabs">
+            <li><a href="#tab1" class="active">Вкладка 1</a></li>
+            <li><a href="#tab2">Вкладка 2</a></li>
+            <li><a href="#tab3">Вкладка 3</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div id="tab1" class="tabcontent">
+            <h2>Панель управления</h2>
+            <div class="panel">
+                <div class="panel-section">
+                    <h3>Раздел 1</h3>
+                    <ul>
+                        <li><a href="#">Пункт 1</a></li>
+                        <li><a href="#">Пункт 2</a></li>
+                        <li><a href="#">Пункт 3</a></li>
+                    </ul>
+                </div>
+                <div class="panel-section">
+                    <h3>Раздел 2</h3>
+                    <ul>
+                        <li><a href="#">Пункт 1</a></li>
+                        <li><a href="#">Пункт 2</a></li>
+                        <li><a href="#">Пункт 3</a></li>
+                    </ul>
+                </div>
+                <div class="panel-section">
+                    <h3>Раздел 3</h3>
+                    <ul>
+                        <li><a href="#">Пункт 1</a></li>
+                        <li><a href="#">Пункт 2</a></li>
+                        <li><a href="#">Пункт 3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="tab2" class="tabcontent">
+            <h2>Содержимое вкладки 2</h2>
+            <p>Текст вкладки 2</p>
+        </div>
+        <div id="tab3" class="tabcontent">
+            <h2>Содержимое вкладки 3</h2>
+            <p>Текст вкладки 3</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

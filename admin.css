@@ -1,0 +1,147 @@
+/* Сброс стилей для всех элементов на странице */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Определение стилей для html и body */
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    color: #cccccc;
+}
+
+/* Обертка для контента и боковой панели */
+.wrapper {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #222B36;
+}
+
+
+/* Стили для боковой панели */
+.sidebar {
+    width: 200px;
+    height: 100%;
+    position: relative;
+    left: -180px;
+    transition: left 0.3s ease;
+    background-color: #3c4c5e;
+}
+
+.sidebar:hover {
+    left: 0;
+}
+
+/* Стили для табов */
+.tabs {
+    margin: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.tabs li {
+    margin: 0;
+    padding: 0;
+}
+
+.tabs a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #cccccc;
+    background-color: #576d87;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
+}
+
+.tabs a:hover {
+    background-color: #3c4c5e;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Стили для контента */
+.content {
+    flex: 1;
+    padding: 10px;
+    background-color: #222B36;
+}
+
+/* Стили для содержимого таба */
+.tabcontent {
+    display: none;
+    padding: 10px;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+.btn {
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    background-color: #576d87;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border: none;
+    font-size: 16px;
+
+}
+
+.btn:hover {
+    background-color: #3c4c5e;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.panel-section {
+    width: 30%;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.panel-section h3 {
+    margin-top: 0;
+}
+
+.panel-section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.panel-section ul li {
+    margin-bottom: 5px;
+}
+
+.panel-section ul li a {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.panel-section ul li a:hover {
+    color: #fff;
+    background-color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+

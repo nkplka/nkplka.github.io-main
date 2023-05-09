@@ -1,0 +1,49 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login to Admin Panel</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.14.0/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.14.0/dist/sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+<h1>Login to Admin Panel</h1>
+<form>
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required><br><br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required><br><br>
+  <button type="button" onclick="auth()">Login</button>
+</form>
+<script>
+  const users = [
+    { username: 'admin', password: 'admin' },
+  ];
+
+  function auth() {
+    console.log("auth function called");
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    const user = users.find(user => user.username === username);
+    if (!user || user.password !== password) {
+      Swal.fire({
+        icon: 'error',
+        title: 'фвыафыва',
+        text: 'пароль хуйня',
+      });
+    } else {
+      Swal.fire({
+        icon: 'success',
+        title: 'салам епта',
+        text: 'пасс сексефул',
+      });
+      setTimeout(function() {
+        window.location.replace("admin.html");
+      }, 1500);
+
+    }
+  }
+</script>
+</body>
+</html>

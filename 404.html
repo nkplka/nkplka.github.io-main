@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>куда ты жмал</title>
+	<style>
+		@font-face {
+      font-family: "dos_font";
+      src: url('res/dos_font.ttf');
+    	}
+    	body{
+      	background-color: #000082;
+    	}
+    	pre{
+      	color: #e7e7e7;
+      	font-family: "dos_font"; font-size: 16pt;
+    	}
+		/* Стили для кнопки */
+		#fullscreen-button {
+			position: fixed;
+			bottom: -50px;
+			left: 50%;
+			transform: translateX(-50%);
+			padding: 12px 24px;
+			background-color: #4a76a8;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+			font-size: 16px;
+			cursor: pointer;
+			transition: bottom 0.3s ease-in-out;
+		}
+
+		/* Стили для анимации кнопки */
+		#fullscreen-button.animate {
+			bottom: 30px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="content" style="display: none;">
+		<pre>Problem has been detected and Windows has been shut down to prevent damage
+to your computer.
+
+The problem seems to be caused by the following file: xNtKrnl.exe
+
+SYSTEM_THREAD_EXCEPTION_NOT_HANDLED
+
+If this is the first time you've seen this stop error screen,
+restart your computer. If this screen appears again, follow
+these steps:
+
+Dont buy atomic heart, because you building russian tanks.
+
+Check to make sure any new hardware or software is properly installed.
+If this is a new installation, ask your hardware or software manufacturer
+for any Windows updates you might need.
+
+If problems continue, disable or remove any newly installed hardware
+or software. Disable BIOS memory options such as caching or shadowing.
+If you need to use safe mode to remove or disable components, restart
+your computer, press F8 to select Advanced Startup Options, and then
+select Safe Mode.
+
+Technical Information:
+
+*** STOP: 0x1000007e (0xffffffffc0000005, 0xfffff80002e55151, 0xfffff880009a99d8,
+0xfffff880009a9230)
+
+*** xNtKrnl.exe - Address 0xfffff80002e55151 base at 0xfffff80002e0d000 DateStamp
+0x4ce7951a</pre>
+</div>
+
+	<button   id='fullscreen-button' link>Accept cookies</button>
+	<!-- Скрипт для анимации кнопки и ее исчезновения после нажатия -->
+	<script type="text/javascript">
+		var button = document.getElementById("fullscreen-button");
+		button.addEventListener("click", function() {
+			document.documentElement.requestFullscreen();
+			button.style.display = "none";
+			document.getElementById("content").style.display = "block";
+
+		});
+
+		setTimeout(function() {
+			button.classList.add("animate");
+		}, 1000);
+
+		setTimeout(function() {
+			button.style.display = "none";
+		}, 4000000);
+	</script>
+</body>
+</html>
