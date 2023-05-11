@@ -1,31 +1,16 @@
-$(function() {
-    $("#menu").draggable();
+const nickname = document.getElementById('nickname');
+const popup = document.getElementById('popup');
+
+nickname.addEventListener('click', function() {
+    popup.style.display = 'block';
 });
 
-$(document).ready(function() {
-    setTimeout(function() {
-        $('#logo-container').fadeOut('slow', function() {
-            $('#menu').fadeIn('slow');
-            $('#overlay').fadeOut('slow');
-        });
-    }, 1000); // Скрываем лого через 2 секунды
+popup.addEventListener('click', function(event) {
+    event.stopPropagation();
 });
 
-$(document).keydown(function(e) {
-    if (e.keyCode === 45) { // проверяем, нажата ли клавиша Insert
-        $('#menu').toggle(); // скрываем или показываем меню
+window.addEventListener('click', function(event) {
+    if (event.target !== nickname && event.target !== popup) {
+        popup.style.display = 'none';
     }
 });
-
-$(document).ready(function(){
-    $('.tabs li a').click(function(event){
-        event.preventDefault();
-        var tab_id = $(this).attr('href');
-        $('.tabs li a').removeClass('current');
-        $('.tabcontent').removeClass('active');
-        $(this).addClass('current');
-        $(tab_id).addClass('active');
-    });
-});
-
-

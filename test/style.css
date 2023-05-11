@@ -1,192 +1,108 @@
-#menu {
-    font-family: 'Poppins Thin', sans-serif;
-    width: 900px;
-    height: 600px;
-    top: 50%;
-    left: 50%;
-    margin-top: -250px;
-    margin-left: -250px;
-    border-radius: 10px;
-    background: #16181c;
-    display: none;
-    position: absolute;
-    overflow: hidden;
-}
-
-#menu h1 {
-    text-align: left;
-    font-size: 10px;
-    margin-bottom: 10px;
-    color: #a4b0bb;
-    margin-top: 15px;
-}
-
-#menu h2 {
-    margin-top: -20px;
-}
-
-#menu p {
-    margin-left: 200px;
-
-
-}
 body {
-    background-image: url("back.jpg");
+    font-family: 'Poppins Thin', sans-serif;
+    background-color: #313338;
 }
 
-#overlay {
+.sidebar {
+    width: 240px;
+    background-color: #2b2d31;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
+.chat-input {
+    position: fixed;
+    bottom: 20px;
+    right: 260px;
+    width: 1330px;
+    height: 50px;
+    background-color: #383a40;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.chat-input input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #383a40;
+    color: white;
+    font-size: 18px;
+    outline: none; /* убираем обводку при клике на инпут */
+}
+
+.sidebar-left {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Затемняющий цвет */
-}
-
-#logo-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#logo-container img {
-    width: 250px;
-    height: auto;
-}
-
-#sidebar-left{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 185px;
-    height: 100%;
-    background-color: #111215;
+    bottom: 0;
+    width: 310px;
+    background-color: #2b2d31;
     color: #fff;
-    font-size: 14px;
-    border-radius: 10px;
-    padding-top: 60px;
-    padding-left: 15px;
-
+    padding: 20px;
+    box-sizing: border-box;
+}
+.nickname-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    outline: none;
 }
 
-#sidebar-left ul {
-    list-style: none;
-    padding: 0;
+.nickname-input input[type="text"] {
+    position: fixed;
+    background-color: #383a40;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.nickname {
+    width: 240px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 875px;
+}
+
+.nickname:hover {
+    background-color: #3d3e45;
+    border-radius: 10px;
+}
+
+.nickname span {
+    user-select: none;
+    position: fixed;
+    top: 910px;
+    left: 30px;
+}
+
+.popup {
+    position: absolute;
+    top: 750px;
+    left: 20px;
+    width: 220px;
+    height: 100px;
+    background-color: #3d3e45;
+    display: none;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    z-index: 1;
+}
+
+.popup p {
     margin: 0;
 }
 
-#sidebar-left li {
-    padding: 10px;
-    border-bottom: 1px solid #111215;
-}
-
-#sidebar-left a {
-    color: #a4b0bb;
-    text-decoration: none;
-    position: relative;
-    left: 0;
-    transition: left 0.2s ease-in-out;
-}
-
-#sidebar-left a:hover {
-    color: #52a5d7;
-    left: 5px;
-}
-
-
-.tabs li a.current {
-    color: #52a5d7; /* цвет текста */
-
-}
-
-
-.tabcontent {
-    display: none;
-}
-
-
-.tabcontent.active {
-    color: #bdbdbe;
+.nickname:hover .popup {
     display: block;
 }
-
-#aimbot {
-    width: 300px;
-    height: 350px;
-    background-color: #111215;
-    margin-top: 30px;
-    margin-left: 220px;
-    border-radius: 10px;
-
-}
-
-#aimbot text {
-    font-size: 10px;
-    margin-left: 15px;
-}
-
-#aimbot1_checkbox label:before {
-    content: "";
-    display: inline-block;
-    position: relative;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #1a1d21;
-    background-color: transparent;
-    border-radius: 3px;
-    box-sizing: border-box;
-    margin-top: 10px;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-#aimbot1_checkbox input[type="checkbox"]:checked+label:before {
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    top: 2px;
-    width: 20px;
-    height: 20px;
-    border: 1px;
-    background-color: #52a5d7;
-    text-align: center;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: bold;
-    border-radius: 3px;
-    box-sizing: border-box;
-    margin-top: 10px;
-}
-
-#aimbot1_checkbox label {
-    display: inline-block;
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 500;
-    color: #fff;
-    font-family: 'Poppins Thin', sans-serif;
-    vertical-align: middle;
-}
-
-#aimbot1_checkbox input[type="checkbox"] {
-    opacity: 0;
-    position: absolute;
-    left: -9999px;
-    margin-top: 10px;
-}
-
-#aimbot1_checkbox input[type="checkbox"]:focus+label:before {
-    outline: none;
-    border: 2px solid #52a5d7;
-    margin-top: 10px;
-}
-
-
-
 
 
